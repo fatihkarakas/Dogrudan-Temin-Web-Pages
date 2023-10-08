@@ -1,0 +1,42 @@
+CREATE TABLE ankara3bol_web.zihale (
+  id INT NOT NULL AUTO_INCREMENT,
+  kurum VARCHAR(255) NOT NULL,
+  icerik TEXT NOT NULL,
+  aciklama TEXT NULL,
+  tarih DATETIME NULL,
+  ihalekod VARCHAR(45) NULL,
+  okunma INT(2) NOT NULL DEFAULT 0,
+  onay INT(5) NOT NULL DEFAULT 0,
+  kontroltarih DATETIME NULL,
+  Sonuc TEXT NULL,
+  PRIMARY KEY (id))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_turkish_ci
+COMMENT = 'İhale Dosyları (Doğrudan Temin Ana Data)';
+
+CREATE TABLE ankara3bol_web.zihale_icerik (
+  id INT NOT NULL AUTO_INCREMENT,
+  ihale_kod char(36) NOT NULL,
+  ihale_id int(11) NOT NULL,
+  SUT VARCHAR(255) NOT NULL,
+  mal_hizmet_yapim VARCHAR(255)  NULL,
+  kanun_bend VARCHAR(255)  NULL,
+  cinsi varchar(500)  NULL,
+  miktar VARCHAR(255) NULL,
+  birim VARCHAR(255) NULL,
+  son_yil_tuketim VARCHAR(255) NULL,
+  birim_son_yil VARCHAR(255) NULL,
+  son_fiyat VARCHAR(255)  NULL,
+  teklif_edilen_marka TEXT  NULL,
+  barkod_kod varchar(255)  NULL,
+  birim_fiyat VARCHAR(255)  NULL,
+  tedarikci VARCHAR(255) NOT NULL,
+  aciklama text NULL,
+  kayit_tar datetime  NULL,
+  onay tinyint(4) NOT NULL DEFAULT '0',
+  sonuc TEXT NULL,
+  PRIMARY KEY (id)) 
+  ENGINE=InnoDB
+  DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_turkish_ci;
