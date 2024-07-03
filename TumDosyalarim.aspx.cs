@@ -21,42 +21,58 @@ public partial class TumDosyalarim : System.Web.UI.Page
             //krm.Text = bs.krmadi;
         }
     }
-          public string dosyanerede(int onay, int sonuc)
-    {
-        string sn = "";
-        if (onay == 11)
-        {
-            sn = "Okunmamış / Beklemede";
-            return sn;
-        }
-        if (onay == 0)
-        {
-            sn = "Onaylanmamış / Beklemede";
-            return sn;
-        }
-        else if (onay == 1)
-        {
-            if (sonuc == 11)
-            {
-                sn = "Onaylanmış / Beklemede";
-                return sn;
-            }
-            else if (sonuc == 0)
-            {
-                sn = "Onaylanmış / Kullanıcıda";
-                return sn;
-            }
-            else if (sonuc == 1)
-            {
-                sn = "Dosya Tamamlanmış";
-            }
-          
-        }
-        else if (onay == 9)
-        {
-            sn = "Dosya Red Edildi";
-            return sn;
-        }
-        return sn;
-    }
+    
+
+    public enum OnayDurumu
+{
+    OkunmamisBeklemede = 11,
+    OnaylanmamisBeklemede = 0,
+    OnaylanmisBeklemede = 1,
+    DosyaRedEdildi = 9
 }
+
+public enum SonucDurumu
+{
+    Beklemede = 11,
+    Kullanicida = 0,
+    Tamamlanmis = 1
+}
+public string DosyaDurumunuGetir(int onay, int sonuc)
+{
+    string durum = "";
+
+    if (onay == 11)
+    {
+        durum = "Okunmamış / Beklemede";
+    }
+    else if (onay == 0)
+    {
+        durum = "Onaylanmamış / Beklemede";
+    }
+    else if (onay == 1)
+    {
+        if (sonuc == 11)
+        {
+            durum = "Onaylanmış / Beklemede";
+        }
+        else if (sonuc == 0)
+        {
+            durum = "Onaylanmış / Kullanıcıda";
+        }
+        else if (sonuc == 1)
+        {
+            durum = "Dosya Tamamlanmış";
+        }
+    }
+    else if (onay == 9)
+    {
+        durum = "Dosya Red Edildi";
+    }
+
+    return durum;
+}
+
+
+ }
+
+

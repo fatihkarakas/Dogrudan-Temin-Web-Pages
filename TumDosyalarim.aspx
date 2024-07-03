@@ -43,7 +43,7 @@
                         <td><%#Eval("icerik") %></td>
                         <td><%# Eval("aciklama") %></td>
                         <td><%#Eval("tarih") %></td>
-                        <td><%#Eval("onay").ToString() == "a" ? dosyanerede(Convert.ToInt32(Eval("onay")), Convert.ToInt32(Eval("sonuc"))) : dosyanerede(Convert.ToInt32(Eval("onay")), Convert.ToInt32(Eval("sonuc")))  %></td>
+                        <td><%#Eval("onay").ToString() == "a" ? DosyaDurumunuGetir(Convert.ToInt32(Eval("onay")), Convert.ToInt32(Eval("sonuc"))) : DosyaDurumunuGetir(Convert.ToInt32(Eval("onay")), Convert.ToInt32(Eval("sonuc")))  %></td>
                         <td><a href='tumdosyalardetay.aspx?id=<%#Eval("id") %>' class="btn btn-info">Detay</a></td>
                       </tr>
 
